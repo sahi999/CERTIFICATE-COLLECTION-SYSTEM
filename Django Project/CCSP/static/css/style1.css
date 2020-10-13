@@ -1,0 +1,18 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url(bgimg.jpg) no-repeat;
+  background-size: cover;
+
+}
+.btn{
+  width: 200%;
+  background: none;
+  border: 2px solid #4caf50;
+  color:white;
+  padding: 5px;
+  font-size: 30px;
+  cursor: pointer;
+  margin: 15px 0;
+}
