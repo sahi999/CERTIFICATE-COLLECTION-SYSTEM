@@ -2,26 +2,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Basic Page</title>
-	<link rel="stylesheet" href="{% static 'css/logo.png' %}">
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
-	
+  <meta charset="utf-8">
+  <title>Basic Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/logo.png' %}">
+  
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+  <style>
+a:link, a:visited {
+  background-color: #f44300;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: green;
+}
+</style>
 </head>
 <body>
-	<form action ="{% url 'base' %}" method="POST" class="post-form">
-		{% csrf_token %}
-		<img  src="{% static 'css/logo.png' %}" alt="Image description" width="75" height="65" style="float:left">
-		<h1 style="color:white; text-align:center;" "font-family:verdana;" >Gayatri Vidya Parishad college of engineering for Women</h1>
-		<br>
-		<hr>
-		<h2 style="color:white; text-align:center;" >CERTIFICATE COLLECTION SYSTEM</h2>
-		
-	<div class="login-box">
-       <a href="{% url 'signin' %}" >student signin</a>
-       <a href="{% url 'signin' %}" >faculty signin</a>
-		
-	</div>
+
+  <form action ="{% url 'base' %}" method="POST" class="post-form">
+    {% csrf_token %}
+    <img  src="{% static 'css/logo.png' %}" alt="Image description" width="75" height="65" style="float:left">
+    <br>
+    <h1 style="color:white; text-align:center;" "font-family:verdana;" >Gayatri Vidya Parishad College of Engineering for Women</h1>
+    <br>
+        <br>
+    <h2 style="color:white; text-align:center;" >CERTIFICATE COLLECTION SYSTEM</h2>
+    <br>
+    <h4 style="color:white; text-align:center;">Welcome to our portal!!!!</h4>
+
+          <div class="container">
+  <div class="card-columns d-flex justify-content-center">
+  <div class="card col-md-6 bg-secondary text-white">
+    <div class="card-body">
+      <h5><p>Student login <i style='font-size:24px' class='far'>&#xf0a7;</i></p></h5>
+      <div class="btn-group">
+    <button type="button" class="btn btn-primary btn-sm"><a href="{% url 'signin' %}" >Login</a></button> 
+    </div>
+  </div>
+</div>
+  <br>
+      <div>
+      {% for message in messages %} 
+      <h4 style="color:white "> {{ message }}</h4>
+      {% endfor %}
+</div>
+  <div class="card col-md-6 bg-secondary  text-white">
+    <div class="card-body" >
+         <h5><p>Faculty login <i style='font-size:24px' class='far'>&#xf0a7;</i></p></h5>
+      <div class="btn-group" align="right">
+    <button type="button" class="btn btn-primary btn-sm"><a href="{% url 'faclogin' %}" >Login</a></button> 
+    </div>
+  </div>
+</div>
+  <br>
+</div>
 </form>
 </body>
-</html> 
+</html>

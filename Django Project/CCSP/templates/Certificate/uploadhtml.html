@@ -1,21 +1,30 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Upload</title>
-	<link rel="stylesheet" href="{% static 'css/style1.css' %}">
-</head>
-<body>  
+{% extends "Certificate/student_dashboard.html" %}
+ {% block content %} 
+
+
+<div class="container d-flex justify-content-center h-100">
+    <div class="row justify-content-center align-self-center">
+      
+<div class="container">
+ <div class="card bg-success text-white">
+ 
   <form method="post" enctype="multipart/form-data">
+    <div class="card-header">
+    {% if user.is_authenticated %}
+        <h1>{{ user.username }} upload files </h1>
+    {% endif %} 
+  </div>
+  <div class="card-body">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Upload</button>
+    </div>
+    <div class="card-footer">
+   <button type="submit">Upload</button>
+ </div>
   </form>
+ </div>
+</div>
+</div>
+</div>
 
-  <p><a href="{% url 'signin' %}">
-  			<input cls='btn' type="submit" name="" value='Return to home'/>
-  </a></p> 
-</body>  
-
-</html>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "Certificate/facdata.html" %}
+ {% block content %}
+ <div >
+ <div class="row justify-content-center align-self-center"> 
+ <div class="container d-flex h-100"> 
+  <div class="row justify-content-center align-self-center">
+<div class="card  text-white" style="width:25rem;">
+  <div class="register">
+  <div class="card-header">
+   <h4> Register student</h4>
+  </div>
+  <div class="card-body">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">signup</button>
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
